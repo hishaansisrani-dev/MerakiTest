@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -29,7 +32,7 @@ const steps = [
   },
   {
     number: 5,
-    title: "Produce",
+    title: "Production",
     description:
       "Once you\u2019ve signed off, we move into full-scale manufacturing with in-line quality monitoring and real-time process control.",
   },
@@ -48,6 +51,8 @@ const steps = [
 ];
 
 export default function ProcessTimeline() {
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+
   return (
     <section className="py-20 lg:py-28">
       <Container>
@@ -63,9 +68,13 @@ export default function ProcessTimeline() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-4">
             {steps.map((step, index) => (
               <ScrollReveal key={step.title} delay={index * 0.1}>
-                <div className="relative text-center lg:pt-0">
+                <div
+                  className="relative text-center lg:pt-0 cursor-pointer"
+                  onMouseEnter={() => setHoveredStep(step.number)}
+                  onMouseLeave={() => setHoveredStep(null)}
+                >
                   {/* Step number */}
-                  <div className="relative z-10 mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white border-2 border-slate-200 shadow-sm">
+                  <div className="relative z-10 mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white border-2 border-slate-200 shadow-sm transition-colors duration-200 hover:border-meraki-500">
                     <span className="text-3xl font-bold text-meraki-500 font-heading">
                       {step.number}
                     </span>
@@ -73,7 +82,13 @@ export default function ProcessTimeline() {
                   <h3 className="mt-4 font-heading text-lg font-bold text-slate-900">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                  <p
+                    className={`mt-2 text-sm text-slate-600 leading-relaxed transition-all duration-200 ${
+                      hoveredStep === step.number
+                        ? "opacity-100 max-h-40"
+                        : "opacity-0 max-h-0 overflow-hidden"
+                    }`}
+                  >
                     {step.description}
                   </p>
                 </div>

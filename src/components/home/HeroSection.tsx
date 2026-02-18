@@ -28,9 +28,6 @@ export default function HeroSection() {
               manufacturers worldwide.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button href="/quote" size="lg">
-                Request a Quote
-              </Button>
               <Button href="/products" variant="outline" size="lg">
                 Explore Our Solutions
               </Button>
