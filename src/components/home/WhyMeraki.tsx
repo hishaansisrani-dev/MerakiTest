@@ -20,7 +20,7 @@ const values = [
     icon: FlaskConical,
     title: "Custom Solutions",
     description:
-      "Tailor-made flexible and rigid packaging products designed around your specific product, market, and regulatory requirements.",
+      "Tailor-made flexible packaging products designed around your specific product, market, and regulatory requirements.",
   },
   {
     icon: Globe,

@@ -38,7 +38,7 @@ export default function AnimatedCounter({ target, suffix = "", duration = 2000 }
 
   return (
     <span ref={ref}>
-      {count}
+      {count.toLocaleString()}
       {suffix}
     </span>
   );

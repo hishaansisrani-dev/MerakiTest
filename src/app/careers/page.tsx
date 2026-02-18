@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import CultureSection from "@/components/careers/CultureSection";
 import BenefitsGrid from "@/components/careers/BenefitsGrid";
-import OpenPositions from "@/components/careers/OpenPositions";
+import CareerForm from "@/components/careers/CareerForm";
 import CTABanner from "@/components/layout/CTABanner";
 
 export const metadata: Metadata = {
@@ -31,13 +31,11 @@ export default function CareersPage() {
 
       <CultureSection />
       <BenefitsGrid />
-      <OpenPositions />
+      <CareerForm />
 
       <CTABanner
         heading="Ready to make your mark?"
         description="We're always looking for talented individuals who share our passion for excellence."
-        buttonText="View Open Positions"
-        buttonHref="#positions"
       />
     </>
   );

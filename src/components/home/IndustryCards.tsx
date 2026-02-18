@@ -16,7 +16,14 @@ const industries = [
   {
     title: "Food & Beverage",
     description:
-      "High-barrier laminates, shrink sleeves, pre-cut lids, and wrap-around labels that preserve freshness, extend shelf life, and deliver standout shelf presence for food and dairy products.",
+      "High-barrier laminates, shrink sleeves, and wrap-around labels that preserve freshness, extend shelf life, and deliver standout shelf presence.",
+    image: "/images/products/product-08.png",
+    href: "/products",
+  },
+  {
+    title: "Dairy",
+    description:
+      "Aluminium pre-cut lids, lidding films, and FFS foils tailored for yogurt, milk, cream, and other dairy products with superior seal integrity.",
     image: "/images/products/aluminum-pre-cut-lids.png",
     href: "/products",
   },
@@ -38,9 +45,9 @@ export default function IndustryCards() {
           subtitle="Specialized packaging solutions engineered for the unique demands of each sector"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {industries.map((industry, index) => (
-            <ScrollReveal key={industry.title} delay={index * 0.15}>
+            <ScrollReveal key={industry.title} delay={index * 0.12}>
               <Link href={industry.href} className="group block">
                 <div className="relative overflow-hidden rounded-2xl bg-white shadow-sm border border-slate-100 transition-shadow hover:shadow-lg">
                   <div className="relative h-56 overflow-hidden">

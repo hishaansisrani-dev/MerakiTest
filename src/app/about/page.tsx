@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import MerakiStory from "@/components/about/MerakiStory";
-import Timeline from "@/components/about/Timeline";
 import ValuesGrid from "@/components/about/ValuesGrid";
 import CTABanner from "@/components/layout/CTABanner";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -33,7 +32,6 @@ export default function AboutPage() {
       </section>
 
       <MerakiStory />
-      <Timeline />
       <ValuesGrid />
 
       {/* Facility showcase */}
@@ -45,24 +43,24 @@ export default function AboutPage() {
                 Our Facility
               </h2>
               <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-                120,000 sq ft of state-of-the-art manufacturing space equipped
-                with the latest extrusion, lamination, and printing technology.
+                State-of-the-art lamination and printing, all done in-house. One
+                facility, built for quality at every step.
               </p>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               {
-                src: "/images/products/aluminum-foil-ffs.png",
-                alt: "Aluminium foil rolls — manufacturing",
+                src: "/images/facility/our-facility-1.jpg",
+                alt: "Meraki Industries facility — manufacturing floor",
               },
               {
-                src: "/images/products/aluminum-pre-cut-lids.png",
-                alt: "Pre-cut lids — dairy packaging",
+                src: "/images/facility/our-facility-2.jpg",
+                alt: "Meraki Industries facility — production line",
               },
               {
-                src: "/images/products/product-07.jpg",
-                alt: "Flexible laminates — production",
+                src: "/images/facility/our-facility-3.jpg",
+                alt: "Meraki Industries facility — equipment",
               },
             ].map((img, index) => (
               <ScrollReveal key={img.alt} delay={index * 0.15}>

@@ -29,7 +29,7 @@ const qualitySteps = [
     icon: FileCheck,
     title: "Final Product Testing",
     description:
-      "Comprehensive testing suite including tensile strength, puncture resistance, MVTR, OTR, migration testing, and accelerated aging studies.",
+      "Comprehensive testing suite including tensile strength, sealing strength, migration testing, and accelerated aging studies.",
   },
   {
     icon: BarChart3,

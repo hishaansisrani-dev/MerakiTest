@@ -5,28 +5,45 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 const steps = [
   {
     number: 1,
-    title: "Consult",
-    description: "We learn your product, market, and regulatory requirements through in-depth technical consultation.",
+    title: "Enquire",
+    description:
+      "Tell us about your product, market, and regulatory requirements through an in-depth technical consultation.",
   },
   {
     number: 2,
-    title: "Design",
-    description: "Our engineers design optimal material structures, barrier properties, and packaging formats.",
+    title: "Quote",
+    description:
+      "We assess your needs and provide a tailored cost estimate and proposal for your review and approval.",
   },
   {
     number: 3,
-    title: "Prototype",
-    description: "Rapid prototyping with real materials to validate performance, machinability, and shelf appeal.",
+    title: "Artwork, Design & Approvals",
+    description:
+      "Our engineers and designers work with you to create optimal artwork, material structures, barrier properties, and packaging formats tailored to your brand \u2014 signed off by you before moving forward.",
   },
   {
     number: 4,
-    title: "Produce",
-    description: "Full-scale manufacturing with in-line quality monitoring and real-time process control.",
+    title: "Pre-Production & Sampling",
+    description:
+      "We produce a printed sample using real materials so you can validate quality, appearance, and performance before full production begins.",
   },
   {
     number: 5,
+    title: "Produce",
+    description:
+      "Once you\u2019ve signed off, we move into full-scale manufacturing with in-line quality monitoring and real-time process control.",
+  },
+  {
+    number: 6,
     title: "Deliver",
-    description: "On-time delivery with complete documentation, COAs, and ongoing technical support.",
+    description:
+      "Your finished order is packaged and shipped on time, complete with full documentation, COAs, and ongoing technical support.",
+  },
+  {
+    number: 7,
+    title: "Customer Satisfaction Report",
+    description:
+      "We follow up to gather your feedback, ensuring the final product met your expectations and identifying any improvements for future orders.",
   },
 ];
 
@@ -43,7 +60,7 @@ export default function ProcessTimeline() {
           {/* Connecting line - desktop only */}
           <div className="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-slate-200" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-4">
             {steps.map((step, index) => (
               <ScrollReveal key={step.title} delay={index * 0.1}>
                 <div className="relative text-center lg:pt-0">

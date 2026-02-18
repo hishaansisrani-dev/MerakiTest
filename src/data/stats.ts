@@ -1,8 +1,8 @@
 import { StatItem } from "@/lib/types";
 
 export const stats: StatItem[] = [
-  { value: 1200, suffix: "+", label: "Employees Worldwide" },
-  { value: 100, suffix: "+", label: "Years Combined Expertise" },
-  { value: 5, suffix: "", label: "Specialized Business Units" },
-  { value: 3, suffix: "", label: "Industry Sectors Served" },
+  { value: 100, suffix: "%", label: "In-House Testing" },
+  { value: 3000, suffix: "", label: "Metric Tons per Annum" },
+  { value: 24, suffix: "/7", label: "Production Cycles" },
+  { value: 80, suffix: "%", label: "Repeat Customer Rate" },
 ];

@@ -32,9 +32,8 @@ export interface Product {
   id: string;
   name: string;
   description: string;
-  specs: string[];
-  image: string;
-  category: "pharmaceutical" | "food-beverage" | "cosmetics";
+  images: string[];
+  categories: string[];
 }
 
 export interface Certification {

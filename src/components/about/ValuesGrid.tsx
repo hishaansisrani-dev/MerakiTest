@@ -32,24 +32,25 @@ const values = [
 
 export default function ValuesGrid() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20 lg:py-28 bg-slate-900">
       <Container>
         <SectionHeading
           title="Our Core Values"
           subtitle="The principles that guide every decision we make"
+          light
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
             <ScrollReveal key={value.title} delay={index * 0.1}>
               <div className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-800">
                   <value.icon className="h-8 w-8 text-meraki-500" />
                 </div>
-                <h3 className="mt-4 font-heading text-lg font-bold text-slate-900">
+                <h3 className="mt-4 font-heading text-lg font-bold text-white">
                   {value.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">
                   {value.description}
                 </p>
               </div>

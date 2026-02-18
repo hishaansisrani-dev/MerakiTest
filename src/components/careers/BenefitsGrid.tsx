@@ -15,13 +15,13 @@ const benefits = [
     icon: Heart,
     title: "Health & Wellness",
     description:
-      "Comprehensive medical, dental, and vision insurance for you and your family.",
+      "Comprehensive medical insurance. Just for you.",
   },
   {
     icon: GraduationCap,
     title: "Learning & Development",
     description:
-      "Tuition reimbursement, professional certifications, and conference sponsorships.",
+      "Continuous training programs from professionals.",
   },
   {
     icon: Clock,
@@ -33,7 +33,7 @@ const benefits = [
     icon: DollarSign,
     title: "Competitive Compensation",
     description:
-      "Market-leading salaries, annual bonuses, and 401(k) matching to build your future.",
+      "Market-leading salaries. Real rewards. Built for your future.",
   },
   {
     icon: Users,
