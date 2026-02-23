@@ -11,16 +11,57 @@ export default function CareerForm() {
   const [submitted, setSubmitted] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
   const [countryCode, setCountryCode] = useState("+971");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     setFileName(file ? file.name : null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const form = formRef.current!;
+      const formData = new FormData();
+
+      formData.append("fullName", (form.elements.namedItem("fullName") as HTMLInputElement).value);
+      formData.append("email", (form.elements.namedItem("email") as HTMLInputElement).value);
+
+      const phoneNumber = (form.elements.namedItem("phone") as HTMLInputElement).value;
+      formData.append("phone", `${countryCode} ${phoneNumber}`);
+
+      const comments = (form.elements.namedItem("comments") as HTMLTextAreaElement).value;
+      if (comments) formData.append("comments", comments);
+
+      const cvFile = fileInputRef.current?.files?.[0];
+      if (cvFile) formData.append("cv", cvFile);
+
+      const response = await fetch("/api/career", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.error || "Submission failed");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or email us directly."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClasses =
@@ -57,6 +98,7 @@ export default function CareerForm() {
 
         <ScrollReveal>
           <form
+            ref={formRef}
             onSubmit={handleSubmit}
             className="max-w-2xl mx-auto space-y-6"
           >
@@ -67,6 +109,7 @@ export default function CareerForm() {
               </label>
               <input
                 type="text"
+                name="fullName"
                 required
                 className={inputClasses}
                 placeholder="Your full name"
@@ -80,6 +123,7 @@ export default function CareerForm() {
               </label>
               <input
                 type="email"
+                name="email"
                 required
                 className={inputClasses}
                 placeholder="you@example.com"
@@ -101,6 +145,7 @@ export default function CareerForm() {
                 />
                 <input
                   type="tel"
+                  name="phone"
                   required
                   className={inputClasses}
                   placeholder="Phone number"
@@ -149,7 +194,7 @@ export default function CareerForm() {
                       Click to upload your CV
                     </p>
                     <p className="text-xs text-slate-400 mt-1">
-                      PDF, DOC, or DOCX (max 10MB)
+                      PDF, DOC, or DOCX (max 4MB)
                     </p>
                   </div>
                 )}
@@ -162,16 +207,29 @@ export default function CareerForm() {
                 Additional Comments / Information
               </label>
               <textarea
+                name="comments"
                 rows={4}
                 className={inputClasses}
                 placeholder="Tell us about yourself, your experience, or any additional information you'd like to share..."
               />
             </div>
 
+            {/* Error message */}
+            {submitError && (
+              <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                {submitError}
+              </div>
+            )}
+
             {/* Submit */}
             <div className="pt-2">
-              <Button type="submit" size="lg" className="w-full">
-                Submit Application
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Submit Application"}
               </Button>
             </div>
           </form>

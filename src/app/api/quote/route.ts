@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { resend, emailConfig } from "@/lib/resend";
+import { buildQuoteEmailHtml } from "@/lib/email-templates";
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,20 +25,19 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const sheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
-    if (sheetsUrl) {
-      try {
-        await fetch(sheetsUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ...data,
-            timestamp: new Date().toISOString(),
-          }),
-        });
-      } catch (sheetError) {
-        console.error("Google Sheets submission failed:", sheetError);
-      }
+    const { error } = await resend.emails.send({
+      from: emailConfig.from,
+      to: emailConfig.to,
+      subject: `New Quote Request from ${data.company}`,
+      html: buildQuoteEmailHtml(data),
+    });
+
+    if (error) {
+      console.error("Resend email failed:", error);
+      return NextResponse.json(
+        { error: "Failed to send email" },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({
