@@ -44,9 +44,14 @@ export async function POST(request: NextRequest) {
       success: true,
       message: "Quote request submitted successfully",
     });
-  } catch {
+  } catch (err) {
+    console.error("Quote API error:", err);
     return NextResponse.json(
-      { error: "Failed to process request" },
+      {
+        error: "Failed to process request",
+        detail: err instanceof Error ? err.message : "Unknown error",
+        hasKey: !!process.env.RESEND_API_KEY,
+      },
       { status: 500 }
     );
   }
