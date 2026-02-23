@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { resend, emailConfig } from "@/lib/resend";
+import { getResend, emailConfig } from "@/lib/resend";
 import { buildCareerEmailHtml } from "@/lib/email-templates";
 
 const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4 MB
@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
 
     const buffer = Buffer.from(await cv.arrayBuffer());
 
-    const { error } = await resend.emails.send({
+    const { error } = await getResend().emails.send({
       from: emailConfig.from,
       to: emailConfig.to,
       subject: `New Career Application from ${fullName}`,

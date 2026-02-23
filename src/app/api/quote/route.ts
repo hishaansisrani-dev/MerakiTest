@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { resend, emailConfig } from "@/lib/resend";
+import { getResend, emailConfig } from "@/lib/resend";
 import { buildQuoteEmailHtml } from "@/lib/email-templates";
 
 export async function POST(request: NextRequest) {
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const { error } = await resend.emails.send({
+    const { error } = await getResend().emails.send({
       from: emailConfig.from,
       to: emailConfig.to,
       subject: `New Quote Request from ${data.company}`,
