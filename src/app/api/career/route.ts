@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getResend, emailConfig } from "@/lib/resend";
-import { buildCareerEmailHtml } from "@/lib/email-templates";
+import { buildCareerEmailHtml, buildCareerConfirmationHtml } from "@/lib/email-templates";
 
 const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4 MB
 const ALLOWED_TYPES = [
@@ -74,6 +74,18 @@ export async function POST(request: NextRequest) {
         { error: "Failed to send application" },
         { status: 500 }
       );
+    }
+
+    // Best-effort confirmation email to applicant
+    try {
+      await getResend().emails.send({
+        from: emailConfig.from,
+        to: email,
+        subject: "Application received — Meraki Industries",
+        html: buildCareerConfirmationHtml({ fullName }),
+      });
+    } catch (confirmationError) {
+      console.error("Confirmation email failed:", confirmationError);
     }
 
     return NextResponse.json({

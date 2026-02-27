@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getResend, emailConfig } from "@/lib/resend";
-import { buildQuoteEmailHtml } from "@/lib/email-templates";
+import { buildQuoteEmailHtml, buildQuoteConfirmationHtml } from "@/lib/email-templates";
 
 export async function POST(request: NextRequest) {
   try {
@@ -38,6 +38,18 @@ export async function POST(request: NextRequest) {
         { error: "Failed to send email" },
         { status: 500 }
       );
+    }
+
+    // Best-effort confirmation email to submitter
+    try {
+      await getResend().emails.send({
+        from: emailConfig.from,
+        to: data.email,
+        subject: "We've received your quote request — Meraki Industries",
+        html: buildQuoteConfirmationHtml({ contactName: data.contactName, company: data.company }),
+      });
+    } catch (confirmationError) {
+      console.error("Confirmation email failed:", confirmationError);
     }
 
     return NextResponse.json({
