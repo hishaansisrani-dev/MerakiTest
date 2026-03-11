@@ -63,18 +63,6 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Content */}
       <div className="p-8 lg:p-10">
-        {/* Category tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {product.categories.map((cat) => (
-            <span
-              key={cat}
-              className="inline-block rounded-lg bg-green-100 px-3 py-1.5 text-xs font-medium text-green-900"
-            >
-              {cat}
-            </span>
-          ))}
-        </div>
-
         {/* Title */}
         <h3 className="font-heading text-xl font-bold text-slate-900">
           {product.name}

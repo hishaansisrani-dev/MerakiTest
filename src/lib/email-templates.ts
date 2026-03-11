@@ -5,7 +5,6 @@ interface QuoteData {
   phone: string;
   industry: string;
   productType: string;
-  volume: string;
   description: string;
 }
 
@@ -63,7 +62,6 @@ export function buildQuoteEmailHtml(data: QuoteData): string {
       ${row("Phone", data.phone)}
       ${row("Industry", data.industry)}
       ${row("Product Type", data.productType)}
-      ${row("Est. Volume", data.volume)}
       ${row("Description", data.description)}
     </table>`;
   return wrapInLayout("New Quote Request", body);
@@ -92,7 +90,7 @@ export function buildCareerConfirmationHtml({ fullName }: { fullName: string }):
       Hi ${fullName},
     </p>
     <p style="font-size:15px;color:#0f172a;line-height:1.6;margin:0 0 16px;">
-      Thank you for your interest in joining Meraki Industries! We've received your application and our HR team will review it shortly.
+      Thank you for your interest in joining Meraki Industries! We've received your application and we will review it shortly.
     </p>
     <p style="font-size:15px;color:#0f172a;line-height:1.6;margin:0 0 16px;">
       If your profile is a match, we'll be in touch to discuss the next steps. In the meantime, feel free to reply to this email if you have any questions.

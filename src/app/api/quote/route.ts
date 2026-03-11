@@ -13,7 +13,6 @@ export async function POST(request: NextRequest) {
       "phone",
       "industry",
       "productType",
-      "volume",
       "description",
     ];
     for (const field of required) {

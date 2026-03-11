@@ -24,7 +24,7 @@ const industries = [
     title: "Dairy",
     description:
       "Aluminium pre-cut lids, lidding films, and FFS foils tailored for yogurt, milk, cream, and other dairy products with superior seal integrity.",
-    image: "/images/products/aluminum-pre-cut-lids.png",
+    image: "/images/products/lids.jpg",
     href: "/products",
   },
   {

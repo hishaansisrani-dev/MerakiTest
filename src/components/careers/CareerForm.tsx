@@ -79,8 +79,8 @@ export default function CareerForm() {
               Application Submitted
             </h2>
             <p className="mt-3 text-slate-600">
-              Thank you for your interest in joining Meraki Industries. Our HR
-              team will review your application and get back to you shortly.
+              Thank you for your interest in joining Meraki Industries. We
+              will review your application and get back to you shortly.
             </p>
           </div>
         </Container>

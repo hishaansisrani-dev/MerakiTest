@@ -1,4 +1,4 @@
-import { ShieldCheck, Clock, Users, Phone, Mail } from "lucide-react";
+import { ShieldCheck, Clock, Phone, Mail } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/constants";
 
 const steps = [
@@ -6,7 +6,7 @@ const steps = [
     number: "1",
     title: "Review",
     description:
-      "Our engineering team reviews your requirements within 24 hours.",
+      "Our sales team reviews your requirements within 24 hours.",
   },
   {
     number: "2",
@@ -91,19 +91,6 @@ export default function TrustSidebar() {
             </span>
           ))}
         </div>
-      </div>
-
-      <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-        <div className="flex items-center gap-3 mb-3">
-          <Users className="h-5 w-5 text-slate-400" />
-          <h3 className="font-heading text-lg font-bold text-slate-900">
-            Trusted By
-          </h3>
-        </div>
-        <p className="text-sm text-slate-500">
-          Over 200 pharmaceutical, food, and cosmetics companies trust Meraki
-          Industries for their packaging needs.
-        </p>
       </div>
     </div>
   );

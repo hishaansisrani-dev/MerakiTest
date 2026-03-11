@@ -15,6 +15,7 @@ export const products: Product[] = [
     description:
       "Aluminum foil is widely used in FFS applications for dairy, water, food, and pharmaceutical packaging. Engineered for Form-Fill-Seal machines, it ensures precise dosing and tamper evidence with excellent barrier properties. Available in 20-to-40-micron thicknesses.",
     images: [
+      "/images/products/ffs-application.jpg",
       "/images/products/aluminum-foil-ffs.png",
       "/images/products/07-scaled.jpg",
     ],
@@ -25,7 +26,7 @@ export const products: Product[] = [
     name: "Aluminum Pre-Cut Lids",
     description:
       "Aluminum pre-cut lids compatible with PVC, PS, PP, and PET containers. Available in 73, 75, 95, 116, and 127-mm diameters with custom printing and embossing. Suitable for dairy, water, juices, and sauces.",
-    images: ["/images/products/precut-lids-new.webp"],
+    images: ["/images/products/lids.jpg", "/images/products/precut-lids-new.webp"],
     categories: ["Cosmetics", "Food and Beverage"],
   },
   {
@@ -33,7 +34,7 @@ export const products: Product[] = [
     name: "Mix \u2013 PAP",
     description:
       "Mix-PAP is a paper-based lidding film for yoghurt and dessert packaging, offering reliable sealing on FFS machines. It combines sustainability with excellent seal integrity and peel performance for dairy products.",
-    images: ["/images/products/product-05.png"],
+    images: ["/images/products/mix-pap.jpeg"],
     categories: ["Cosmetics", "Food and Beverage"],
   },
   {
@@ -41,7 +42,7 @@ export const products: Product[] = [
     name: "PVC / PETG Shrink Sleeves",
     description:
       "PVC and PETG shrink films, in roll or pre-cut form, are used for food & beverages and cosmetics packaging. They provide 360-degree decoration with full-body graphics, tamper-evident bands, and high shrink ratio, available in 35\u201350-micron thicknesses.",
-    images: ["/images/products/product-08.png"],
+    images: ["/images/products/shrink-sleeve.jpg", "/images/products/product-08.png"],
     categories: ["Cosmetics"],
   },
   {
@@ -50,7 +51,7 @@ export const products: Product[] = [
     description:
       "These multi-layer film structures combine two, three, or four materials to deliver the right balance of strength, barrier protection, and sealability. Custom barrier structures designed to extend shelf life and protect product freshness for food, snack, and FMCG packaging.",
     images: [
-      "/images/products/product-04.png",
+      "/images/products/bi-tri-quad-laminates.jpg",
       "/images/products/07-scaled.jpg",
     ],
     categories: ["Food and Beverage", "Pharmaceutical"],
@@ -69,7 +70,7 @@ export const products: Product[] = [
     description:
       "Aluminium blister foil is used in pharmaceutical packaging for tablets and capsules, providing an effective barrier against moisture, oxygen, and light. It is manufactured from hard-tempered aluminium alloy 8021/8079 with a heat-seal lacquer on one side and a print-receptive coating on the other, available in 20\u201330 micron thickness range.",
     images: [
-      "/images/products/aluminium-blister-foil.png",
+      "/images/products/blister-foil.jpg",
       "/images/products/blister-foil-02.jpg",
     ],
     categories: ["Cosmetics", "Pharmaceutical"],
@@ -79,7 +80,7 @@ export const products: Product[] = [
     name: "Self-Adhesive Labels",
     description:
       "Self-adhesive labels offer a reliable and versatile solution for product identification and branding. Available in various materials and finishes, they are suitable for pharmaceutical, food & beverage, dairy, and cosmetics applications.",
-    images: ["/images/products/self-adhesive-labels.jpeg"],
+    images: ["/images/about/about-main.png", "/images/products/self-adhesive-labels.jpeg"],
     categories: ["Cosmetics", "Dairy", "Food and Beverage", "Pharmaceutical"],
   },
 ];

@@ -14,7 +14,6 @@ const quoteSchema = z.object({
   phone: z.string().min(7, "Please enter a valid phone number"),
   industry: z.string().min(1, "Please select an industry"),
   productType: z.string().min(2, "Please describe the product type"),
-  volume: z.string().min(1, "Please estimate your volume"),
   description: z.string().min(10, "Please provide more details about your requirements"),
 });
 
@@ -144,22 +143,7 @@ export default function QuoteForm() {
       </div>
 
       <div>
-        <label className={labelClasses}>Estimated Annual Volume *</label>
-        <select {...register("volume")} className={inputClasses}>
-          <option value="">Select volume range...</option>
-          <option value="under-100k">Under 100,000 units</option>
-          <option value="100k-500k">100,000 - 500,000 units</option>
-          <option value="500k-1m">500,000 - 1,000,000 units</option>
-          <option value="1m-5m">1,000,000 - 5,000,000 units</option>
-          <option value="over-5m">Over 5,000,000 units</option>
-        </select>
-        {errors.volume && (
-          <p className={errorClasses}>{errors.volume.message}</p>
-        )}
-      </div>
-
-      <div>
-        <label className={labelClasses}>Project Description *</label>
+        <label className={labelClasses}>Product Description *</label>
         <textarea
           {...register("description")}
           rows={4}
