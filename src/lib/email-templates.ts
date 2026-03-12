@@ -36,7 +36,7 @@ function wrapInLayout(title: string, body: string): string {
         </tr>
         <tr>
           <td style="padding:16px 32px;background:#f8fafc;color:#94a3b8;font-size:12px;text-align:center;">
-            Meraki Industries &mdash; Automated notification
+            Meraki Industries LLC &mdash; Automated notification
           </td>
         </tr>
       </table>
@@ -79,7 +79,7 @@ export function buildQuoteConfirmationHtml({ contactName, company }: { contactNa
       You can expect to hear back from us within <strong>24 hours</strong>. If your request is urgent, feel free to reply to this email.
     </p>
     <p style="font-size:15px;color:#64748b;line-height:1.6;margin:0;">
-      — The Meraki Industries Team
+      — The Meraki Industries LLC Team
     </p>`;
   return wrapInLayout("We've Received Your Quote Request", body);
 }
@@ -90,13 +90,13 @@ export function buildCareerConfirmationHtml({ fullName }: { fullName: string }):
       Hi ${fullName},
     </p>
     <p style="font-size:15px;color:#0f172a;line-height:1.6;margin:0 0 16px;">
-      Thank you for your interest in joining Meraki Industries! We've received your application and we will review it shortly.
+      Thank you for your interest in joining Meraki Industries LLC! We've received your application and we will review it shortly.
     </p>
     <p style="font-size:15px;color:#0f172a;line-height:1.6;margin:0 0 16px;">
       If your profile is a match, we'll be in touch to discuss the next steps. In the meantime, feel free to reply to this email if you have any questions.
     </p>
     <p style="font-size:15px;color:#64748b;line-height:1.6;margin:0;">
-      — The Meraki Industries Team
+      — The Meraki Industries LLC Team
     </p>`;
   return wrapInLayout("Application Received", body);
 }

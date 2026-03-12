@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
       await getResend().emails.send({
         from: emailConfig.from,
         to: email,
-        subject: "Application received — Meraki Industries",
+        subject: "Application received — Meraki Industries LLC",
         html: buildCareerConfirmationHtml({ fullName }),
       });
     } catch (confirmationError) {

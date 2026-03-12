@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
       await getResend().emails.send({
         from: emailConfig.from,
         to: data.email,
-        subject: "We've received your quote request — Meraki Industries",
+        subject: "We've received your quote request — Meraki Industries LLC",
         html: buildQuoteConfirmationHtml({ contactName: data.contactName, company: data.company }),
       });
     } catch (confirmationError) {
