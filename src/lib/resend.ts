@@ -10,6 +10,6 @@ export function getResend() {
 }
 
 export const emailConfig = {
-  from: "Meraki Industries <onboarding@resend.dev>",
-  to: "hishaan.s.israni@gmail.com",
+  from: "Meraki Industries <info@meraki-industries.com>",
+  to: "info@meraki-industries.com",
 } as const;
