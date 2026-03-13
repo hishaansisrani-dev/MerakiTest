@@ -17,7 +17,7 @@ const industries = [
     title: "Food & Beverage",
     description:
       "High-barrier laminates, shrink sleeves, and wrap-around labels that preserve freshness, extend shelf life, and deliver standout shelf presence.",
-    image: "/images/products/product-08.png",
+    image: "/images/products/product-08.jpg",
     href: "/products",
   },
   {
@@ -31,7 +31,7 @@ const industries = [
     title: "Cosmetics",
     description:
       "Premium packaging solutions for skincare, haircare, and beauty products with luxury finishes and sustainable material options.",
-    image: "/images/about/about-main.png",
+    image: "/images/about/about-main.jpg",
     href: "/products",
   },
 ];

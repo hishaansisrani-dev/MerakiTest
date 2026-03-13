@@ -7,7 +7,7 @@ export default function HeroSection() {
     <section className="relative min-h-[90vh] flex items-center">
       {/* Background */}
       <Image
-        src="/images/hero/Meraki_industires_hero.png"
+        src="/images/hero/Meraki_industires_hero.jpg"
         alt="Meraki Industries — flexible packaging manufacturing facility"
         fill
         className="object-cover"

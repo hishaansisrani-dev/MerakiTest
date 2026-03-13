@@ -6,7 +6,7 @@ export const products: Product[] = [
     name: "Alu \u2013 PET/PET-Alu",
     description:
       "Alu-PET/PET-Alu is a laminate of aluminum foil and polyester, with a HSL lacquer applied to the inner surface. This structure provides excellent barrier properties and is widely used in pharmaceutical sachets, strip packs, and overwraps, engineered for compliance with global pharmacopoeia standards.",
-    images: ["/images/products/img.png"],
+    images: ["/images/products/img.jpg"],
     categories: ["Dairy"],
   },
   {
@@ -16,7 +16,7 @@ export const products: Product[] = [
       "Aluminum foil is widely used in FFS applications for dairy, water, food, and pharmaceutical packaging. Engineered for Form-Fill-Seal machines, it ensures precise dosing and tamper evidence with excellent barrier properties. Available in 20-to-40-micron thicknesses.",
     images: [
       "/images/products/ffs-application.jpg",
-      "/images/products/aluminum-foil-ffs.png",
+      "/images/products/aluminum-foil-ffs.jpg",
       "/images/products/07-scaled.jpg",
     ],
     categories: ["Dairy", "Food and Beverage", "Pharmaceutical"],
@@ -42,7 +42,7 @@ export const products: Product[] = [
     name: "PVC / PETG Shrink Sleeves",
     description:
       "PVC and PETG shrink films, in roll or pre-cut form, are used for food & beverages and cosmetics packaging. They provide 360-degree decoration with full-body graphics, tamper-evident bands, and high shrink ratio, available in 35\u201350-micron thicknesses.",
-    images: ["/images/products/shrink-sleeve.jpg", "/images/products/product-08.png"],
+    images: ["/images/products/shrink-sleeve.jpg", "/images/products/product-08.jpg"],
     categories: ["Cosmetics"],
   },
   {
@@ -80,7 +80,7 @@ export const products: Product[] = [
     name: "Self-Adhesive Labels",
     description:
       "Self-adhesive labels offer a reliable and versatile solution for product identification and branding. Available in various materials and finishes, they are suitable for pharmaceutical, food & beverage, dairy, and cosmetics applications.",
-    images: ["/images/about/about-main.png", "/images/products/self-adhesive-labels.jpeg"],
+    images: ["/images/about/about-main.jpg", "/images/products/self-adhesive-labels.jpeg"],
     categories: ["Cosmetics", "Dairy", "Food and Beverage", "Pharmaceutical"],
   },
 ];

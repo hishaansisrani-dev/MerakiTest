@@ -40,7 +40,7 @@ export default function MerakiStory() {
           <ScrollReveal direction="right" delay={0.2}>
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="/images/hero/Meraki_industires_hero.png"
+                src="/images/hero/Meraki_industires_hero.jpg"
                 alt="Meraki Industries LLC — flexible packaging manufacturing"
                 fill
                 className="object-cover"
