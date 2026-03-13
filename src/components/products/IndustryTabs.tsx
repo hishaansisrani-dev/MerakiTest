@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import ProductGrid from "./ProductGrid";
 import { products } from "@/data/products";
@@ -14,8 +15,19 @@ const categories = [
 ];
 
 export default function IndustryTabs() {
-  const [active, setActive] = useState("All");
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
+  const initialCategory =
+    categoryParam && categories.includes(categoryParam) ? categoryParam : "All";
+
+  const [active, setActive] = useState(initialCategory);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (categoryParam && categories.includes(categoryParam)) {
+      setActive(categoryParam);
+    }
+  }, [categoryParam]);
 
   const filtered =
     active === "All"

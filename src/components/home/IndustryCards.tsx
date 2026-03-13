@@ -11,28 +11,28 @@ const industries = [
     description:
       "Blister foils, rigid PVC, PVDC, and cold-form blister packaging engineered for pharmaceutical safety, compliance, and regulatory standards worldwide.",
     image: "/images/products/product-02.jpg",
-    href: "/products",
+    href: "/products?category=Pharmaceutical",
   },
   {
     title: "Food & Beverage",
     description:
       "High-barrier laminates, shrink sleeves, and wrap-around labels that preserve freshness, extend shelf life, and deliver standout shelf presence.",
     image: "/images/products/product-08.jpg",
-    href: "/products",
+    href: "/products?category=Food+and+Beverage",
   },
   {
     title: "Dairy",
     description:
       "Aluminium pre-cut lids, lidding films, and FFS foils tailored for yogurt, milk, cream, and other dairy products with superior seal integrity.",
     image: "/images/products/lids.jpg",
-    href: "/products",
+    href: "/products?category=Dairy",
   },
   {
     title: "Cosmetics",
     description:
       "Premium packaging solutions for skincare, haircare, and beauty products with luxury finishes and sustainable material options.",
     image: "/images/about/about-main.jpg",
-    href: "/products",
+    href: "/products?category=Cosmetics",
   },
 ];
 

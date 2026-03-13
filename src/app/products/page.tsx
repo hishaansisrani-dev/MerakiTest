@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -33,13 +34,15 @@ export default function ProductsPage() {
             title="Packaging by Industry"
             subtitle="Select your industry to explore our specialized product lines"
           />
-          <IndustryTabs />
+          <Suspense>
+            <IndustryTabs />
+          </Suspense>
         </Container>
       </section>
 
 <CTABanner
         heading="Need a custom packaging solution?"
-        description="Our engineering team can develop tailored material structures for your specific requirements."
+        description="Our team can develop tailored material structures for your specific requirements."
         buttonText="Start a Project"
         buttonHref="/quote"
       />
