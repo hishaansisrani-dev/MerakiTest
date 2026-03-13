@@ -38,13 +38,66 @@ export default function MerakiStory() {
           </ScrollReveal>
 
           <ScrollReveal direction="right" delay={0.2}>
-            <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden">
-              <Image
-                src="/images/hero/Meraki_industires_hero.jpg"
-                alt="Meraki Industries LLC — flexible packaging manufacturing"
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-96 lg:h-[520px]">
+              {/* Large hero image — back left */}
+              <div className="absolute top-0 left-0 w-[62%] h-[58%] rounded-2xl overflow-hidden shadow-xl z-10">
+                <Image
+                  src="/images/facility/machines/machine-6.jpg"
+                  alt="WAC-1300 lamination line"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Top-right, slight rotation */}
+              <div className="absolute top-4 right-0 w-[42%] h-[44%] rounded-xl overflow-hidden shadow-lg rotate-2 z-20">
+                <Image
+                  src="/images/facility/machines/machine-1.jpg"
+                  alt="Sleeve EVO converting machine"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Middle overlap — sits between rows */}
+              <div className="absolute top-[38%] left-[28%] w-[40%] h-[34%] rounded-xl overflow-hidden shadow-2xl -rotate-1 z-30 ring-4 ring-white">
+                <Image
+                  src="/images/facility/machines/machine-5.jpg"
+                  alt="Slitting and rewinding machine"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Bottom-left, angled */}
+              <div className="absolute bottom-0 left-0 w-[38%] h-[42%] rounded-xl overflow-hidden shadow-lg -rotate-2 z-20">
+                <Image
+                  src="/images/facility/machines/machine-3.jpg"
+                  alt="Rotogravure press detail"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Bottom-center */}
+              <div className="absolute bottom-2 left-[34%] w-[32%] h-[36%] rounded-xl overflow-hidden shadow-lg rotate-1 z-10">
+                <Image
+                  src="/images/facility/machines/machine-4.jpg"
+                  alt="Label converting equipment"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Bottom-right, larger tilt */}
+              <div className="absolute bottom-0 right-0 w-[38%] h-[44%] rounded-2xl overflow-hidden shadow-xl -rotate-3 z-20">
+                <Image
+                  src="/images/facility/machines/machine-2.jpg"
+                  alt="Rotogravure printing press"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>
